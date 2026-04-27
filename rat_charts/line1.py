@@ -10,12 +10,22 @@ import branca.colormap as cm
 import requests
 import networkx as nx
 from pyvis.network import Network
-from rat_charts.data_loader import load_line1 
+from rat_charts.data_loader import load_line1, load_rest_by_zip, load_permits_by_zip
 
 
 
 def behavior_chart():
+    BOROUGH_COLORS = {
+        'BROOKLYN': '#2F3E46',
+        'MANHATTAN': '#52796F',
+        'QUEENS': '#84A98C',
+        'BRONX': '#527588',
+        'STATEN ISLAND': '#CAD2C5',
+        'All NYC': '#354F52'
+    }
     zip_borough = load_line1()
+    rest_by_zip = load_rest_by_zip()
+    permits_by_zip = load_permits_by_zip()
     
     zip_scatter = (zip_borough
         .merge(rest_by_zip, left_on='incident_zip', right_on='ZIPCODE', how='left')

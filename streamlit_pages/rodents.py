@@ -15,4 +15,4 @@ from rat_charts.line1 import behavior_chart
 
 def show():
     chart1 = behavior_chart()
-    st.pyplot(chart1)
+    st.altair_chart(chart1)
