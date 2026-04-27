@@ -53,3 +53,21 @@ def load_permits_by_zip():
                     .reset_index(name='construction_permits'))
     permits_by_zip['zip_code'] = permits_by_zip['zip_code'].astype(int).astype(str)
     return permits_by_zip
+
+@st.cache_data
+def load_rats_311():
+    rats = pd.read_csv("rat_csv/rats_slim_final.csv")
+    rats["created_date"] = pd.to_datetime(rats["created_date"])
+    rats["year_month"] = rats["created_date"].dt.to_period("M")
+    return rats
+
+@st.cache_data
+def load_rats_2025():
+    rats = load_rats_311()
+    return rats[rats["created_date"] < "2026-01-01"]
+
+@st.cache_data
+def load_zip_gdf():
+    df = pd.read_csv("rat_csv/zip_gdf.csv")
+    df["geometry"] = gpd.GeoSeries.from_wkt(df["geometry"])
+    return gpd.GeoDataFrame(df, geometry = "geometry", crs="EPSG:4326")
