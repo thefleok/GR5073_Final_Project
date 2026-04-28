@@ -71,3 +71,37 @@ def load_zip_gdf():
     df = pd.read_csv("rat_csv/zip_gdf.csv")
     df["geometry"] = gpd.GeoSeries.from_wkt(df["geometry"])
     return gpd.GeoDataFrame(df, geometry = "geometry", crs="EPSG:4326")
+
+@st.cache_data
+def load_zip_df():
+    return pd.read_csv("rat_csv/zip_df.csv")
+
+@st.cache_data
+def load_mta():
+    return pd.read_csv("rat_csv/mta_stations.csv")
+
+@st.cache_data
+def load_nycha():
+    df = pd.read_csv("rat_csv/nycha.csv")
+    df['geometry'] = gpd.GeoSeries.from_wkt(df['the_geom'])
+    return gpd.GeoDataFrame(df, geometry='geometry', crs='EPSG:4326')
+
+@st.cache_data
+def load_neighborhoods():
+    df = pd.read_csv("rat_csv/neighborhoods.csv")
+    df['geometry'] = gpd.GeoSeries.from_wkt(df['the_geom'])
+    return gpd.GeoDataFrame(df, geometry='geometry', crs='EPSG:4326')
+
+@st.cache_data
+def load_boroughs():
+    df = pd.read_csv("rat_csv/boroughs.csv")
+    df['geometry'] = gpd.GeoSeries.from_wkt(df['the_geom'])
+    return gpd.GeoDataFrame(df, geometry='geometry', crs='EPSG:4326')
+
+@st.cache_resource
+def load_routes():
+    return gpd.read_file("rat_csv/subway_routes.shp")
+
+@st.cache_data
+def load_merged():
+    return pd.read_csv("rat_csv/merged.csv")

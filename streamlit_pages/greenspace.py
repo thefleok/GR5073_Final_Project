@@ -14,7 +14,7 @@ def show():
 
 
     # introduction to first graph
-    st.markdown("### Graph 1: Overview of parks and greenspaces")
+    st.markdown("### Overview of Parks and Greenspaces")
 
     chart1 = park_types_chart()
     st_folium(chart1, width = 700, height = 500)
@@ -29,7 +29,7 @@ def show():
 
 
     # introduction to second graph
-    st.markdown("### Graph 2: When NYC Parks were Established")
+    st.markdown("### When NYC Parks were Established")
     
     chart2 = parks_time_chart()
     st_folium(chart2, width = 700, height = 500)
