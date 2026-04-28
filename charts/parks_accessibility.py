@@ -96,7 +96,7 @@ def parks_accessibility_chart():
         },
         tooltip=folium.GeoJsonTooltip(
             fields=['NAMELSAD', 'pop_density', 'green_coverage_pct'],
-            aliases=['Tract:', 'Population Density:', 'Green %:'],
+            aliases=['Tract:', 'Population Density(persons per sq mi):', 'Green %:'],
             localize=True
         )
     ).add_to(m)
