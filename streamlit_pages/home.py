@@ -14,9 +14,8 @@ def show():
                 "\n\n"
                 "Project members: \n" \
                 "* **Leo Jergovic** — (650) 450-3396 — lj2496@columbia.edu \n"  
-                "* Sofia Giorgianni \n"
-                "* Natalie Masetti \n" 
-                "* Stulli Sigurdsson \n "
-                "* Rosanne Wei \n"
-
+                "* Sofia Giorgianni — (202) 379-5380 — sg3925@columbia.edu \n"
+                "* Natalie Masetti — (484) 538-1204\n" 
+                "* Sturlaugur Sigurdsson — +354 852-0080 — ss7693@columbia.edu\n "
+                "* Rongshan Wei — (917) 593-6966 — rw3082@columbia.edu \n"
                 )
