@@ -20,6 +20,8 @@ from rat_charts.bar2 import bar2_chart
 from rat_charts.bar3 import bar3_chart
 from rat_charts.map4 import map_chart4
 from rat_charts.scatter5 import scatter5_chart
+from rat_charts.heat6 import heat6_chart
+from rat_charts.scatter7 import scatter7_chart
 
 def show():
     st.markdown("# Rodents in NYC")
@@ -55,4 +57,14 @@ def show():
     st.markdown("### see below")
     chart5 = scatter5_chart()
     st.altair_chart(chart5)
+    st.markdown("see above")
+
+    st.markdown("### see below")
+    chart6 = heat6_chart()
+    st_folium(chart6)
+    st.markdown("see above")
+
+    st.markdown("### see below")
+    chart7 = scatter7_chart()
+    st.altair_chart(chart7)
     st.markdown("see above")
