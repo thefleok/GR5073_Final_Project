@@ -13,10 +13,6 @@ from rat_charts.data_loader import load_zip_gdf
 
 def map_chart4():
     zip_gdf = load_zip_gdf()
-    print(zip_gdf[['population', 'rat_per_1000', 'violations_per_1000', 'permits_per_1000']].describe())
-    print(zip_gdf.columns.tolist())
-
-
 
     #  Normalized Folium Choropleth
     m = folium.Map(location=[40.7128, -73.95], zoom_start=11, tiles='CartoDB positron', attr="")

@@ -74,13 +74,7 @@ def heat6_chart():
     # Layer: Boroughs
     # -----------------------
 
-    borough["geometry"] = borough["the_geom"].apply(wkt.loads)
-
-    borough_gdf = gpd.GeoDataFrame(
-        borough,
-        geometry="geometry",
-        crs="EPSG:4326"
-    )
+  
 
     borough_layer = folium.FeatureGroup(
         name="Boroughs",
@@ -103,13 +97,6 @@ def heat6_chart():
     # Layer: Neighborhoods
     # -----------------------
 
-    neigh_df["geometry"] = neigh_df["the_geom"].apply(wkt.loads)
-
-    neighborhoods_gdf = gpd.GeoDataFrame(
-        neigh_df,
-        geometry="geometry",
-        crs="EPSG:4326"
-    )
 
     neighborhood_layer = folium.FeatureGroup(
         name="Neighborhoods",
@@ -183,13 +170,7 @@ def heat6_chart():
     # Layer: NYCHA Buildings
     # -----------------------
 
-    NYCHA["geometry"] = NYCHA["the_geom"].apply(wkt.loads)
-
-    nycha_gdf = gpd.GeoDataFrame(
-        NYCHA,
-        geometry="geometry",
-        crs="EPSG:4326"
-    )
+    
 
     nycha_layer = folium.FeatureGroup(
         name="NYCHA Buildings",

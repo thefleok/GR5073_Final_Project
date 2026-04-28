@@ -14,10 +14,10 @@ def show():
 
 
     # introduction to first graph
-    st.markdown("### Overview of Parks and Greenspaces")
+    st.markdown("### High Level Map: Overview of Parks and Greenspaces")
 
-    chart1 = park_types_chart()
-    st_folium(chart1, width = 700, height = 500)
+    chart3 = parks_housing_chart()
+    st_folium(chart3, width = 700, height = 500)
 
     st.markdown("This map shows the different parks and greenspaces (including" \
     " recreation areas, gardens, and waterfront areas) around NYC, as well as " \
@@ -29,23 +29,44 @@ def show():
 
 
     # introduction to second graph
-    st.markdown("### When NYC Parks were Established")
+    st.markdown("### Interactive Map: When NYC Parks were Established")
     
     chart2 = parks_time_chart()
     st_folium(chart2, width = 700, height = 500)
 
-    st.markdown("This map shows the dates when all of New York City’s parks were " \
-    "established to date, divided into five main periods, illustrating the guiding " \
-    "principles behind the city’s development during different historical phases.")
+    st.markdown("This map shows the dates when certain parks and green spaces were established "
+    "in New York City. Prior to 1873, there was a push for more green spaces in New York City to" \
+    " help mitigate the effects of communicable diseases. For example, the development of Central" \
+    " Park began in around 1858 to offset poor industrial living standards. The City Beautiful" \
+    " movement followed, which attempted to further enhance the natural design of New York " \
+    "City. Robert Moses’ later influence cannot be understated: swimming pools, parkways, "
+    "and new parks and infrastructure popped up all over the city. Then the 1975 fiscal crisis" \
+    " created conditions where greenspaces were not prioritized. More recently, the focus has " \
+    "been on the climate, as well as green living areas pricing out previous residents (the" \
+    "green gentrification).")
 
     
 
     # show third map
     st.markdown("### Graph 3: Affordable housing, distance from green spaces")
-    chart3 = parks_housing_chart()
-    st_folium(chart3, width = 700, height = 500)
+    chart1 = park_types_chart()
+    st_folium(chart1, width = 700, height = 500)
+    st.markdown("This map shows the typical “park” parks (including flagship parks, like Central " \
+    "Park, community parks, and neighborhood parks) and housing projects which contained at least 20 percent " \
+    "low- to extremely-low-income units completed in the second half of 2025. This map also demonstrates the " \
+    "distance from each low-income housing unit to its nearest park. The average distance from low-income housing" \
+    " to a park is about a **quarter mile**.")
+
+    
 
 
-
+    st.markdown("### Park Accessibility Map")
     chart4 = parks_accessibility_chart()
     st_folium(chart4, width = 700, height = 500)
+    st.markdown("This map utilizes a 2x2 bivariate matrix to analyze the intersection of population density and green " \
+    "space coverage (the percentage of parkland within a census tract). By splitting both variables at their city-wide" \
+    " medians, we categorize NYC neighborhoods into four distinct archetypes. The most critical areas are the 'Park " \
+    "Deserts', where high residential density meets minimal green infrastructure, signaling potential environmental " \
+    "injustice. Conversely, the 'Integrated Excellence' zones represent successful urban planning where high density is " \
+    "balanced with significant park access. All data has been clipped to land boundaries to ensure spatial accuracy and " \
+    "exclude non-residential water areas.")

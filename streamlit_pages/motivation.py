@@ -1,3 +1,3 @@
 import streamlit as st
 def show():
-    print("hello")
+    st.markdown("Enthusiastic New Yorkers embrace what is colloquially referred to as the \"concgrete\" jungle. Constantly facing buildings, street noise, and apartment buildings, their natural or humanistic life is often sacrificed at the expense of a vibrant and cultural city. \n\n In this analysis, we set out to try and tell a data-driven story about whether New Yorkers are truly inhabitants of a \"concrete jungle\" or if there are ample opportunities to still engage with wildlife. In our consideration of parks, we try to understand (from a mapping perspective) the prevalence of parks in New York. In our consideration of rodents and squirrels, we try to understand how much these city environments are corrupted by rodents and less pleasurable living acquaintances. TO BE UPDATED AFTER APRIL 28 SUBMISSION")
