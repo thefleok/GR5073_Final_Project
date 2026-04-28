@@ -73,8 +73,8 @@ def parks_accessibility_chart():
     # Step E: 2x2 Binning (Median Split)
     final_gdf['pop_density'] = final_gdf['total_pop'] / final_gdf['tract_area_sqmi']
     for col in ['x_label', 'y_label', 'bi_class']:
-    if col in final_gdf.columns:
-        final_gdf.drop(columns=[col], inplace=True)
+        if col in final_gdf.columns:
+            final_gdf.drop(columns=[col], inplace=True)
     final_gdf['x_label'] = pd.qcut(final_gdf['pop_density'].rank(method='first'), 2, labels=['1', '2'])
     final_gdf['y_label'] = pd.qcut(final_gdf['green_coverage_pct'].rank(method='first'), 2, labels=['1', '2'])
     final_gdf['bi_class'] = final_gdf['x_label'].astype(str) + final_gdf['y_label'].astype(str)
