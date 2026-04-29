@@ -85,5 +85,5 @@ def map_chart4():
     ).add_to(perm_layer)
     perm_layer.add_to(m)
 
-    folium.LayerControl(collapsed=False).add_to(m)
+    folium.LayerControl(collapsed=True).add_to(m)
     return m

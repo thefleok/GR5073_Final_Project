@@ -168,6 +168,6 @@ def heat6_chart():
     # -----------------------
     # Layer Control
     # -----------------------
-    folium.LayerControl(collapsed=False).add_to(m)
+    folium.LayerControl(collapsed=True).add_to(m)
 
     return m
