@@ -57,7 +57,7 @@ def bar3_chart():
                 alt.Tooltip('complaints:Q', title='Complaints', format=',')]
     ).facet(
         facet=alt.Facet('borough:N', title=None),
-        columns=3
+        columns=2
     ).properties(
         title=alt.Title(
             '',
