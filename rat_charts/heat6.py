@@ -16,7 +16,6 @@ def heat6_chart():
     routes_gdf = load_routes()
 
 
-
     # Ensure numeric
     merged["Latitude"] = pd.to_numeric(merged["Latitude"], errors="coerce")
     merged["Longitude"] = pd.to_numeric(merged["Longitude"], errors="coerce")
@@ -26,6 +25,10 @@ def heat6_chart():
         merged["Problem Detail (formerly Descriptor)"]
         .str.contains("Rat|Mouse", case=False, na=False)
     ].dropna(subset=["Latitude", "Longitude"]).copy()
+
+    heat_data = rats.sample(n=5000, random_state=42)[["Latitude", "Longitude"]].values.tolist()
+    heat_data = rats[["Latitude", "Longitude"]].values.tolist()  # original
+
 
     # Map
     m = folium.Map(
@@ -157,41 +160,11 @@ def heat6_chart():
             "color": "#52796F",   # muted default
             "weight": 2,
             "opacity": 0.7
-        },
-        tooltip=folium.GeoJsonTooltip(
-            fields=["route_shor", "route_long"],
-            aliases=["Line:", "Route:"]
-        )
+        }
     ).add_to(subway_layer)
 
     subway_layer.add_to(m)
 
-    # -----------------------
-    # Layer: NYCHA Buildings
-    # -----------------------
-
-    
-
-    nycha_layer = folium.FeatureGroup(
-        name="NYCHA Buildings",
-        show=False
-    )
-
-    folium.GeoJson(
-        NYCHA,
-        style_function=lambda x: {
-            "fillColor": "#2F3E46",
-            "color": "#2F3E46",
-            "weight": 0,
-            "fillOpacity": 0.7
-        },
-        tooltip=folium.GeoJsonTooltip(
-            fields=["DEVELOPMEN"],
-            aliases=["NYCHA Development:"]
-        )
-    ).add_to(nycha_layer)
-
-    nycha_layer.add_to(m)
     # -----------------------
     # Layer Control
     # -----------------------

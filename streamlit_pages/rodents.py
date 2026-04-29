@@ -54,7 +54,7 @@ def show():
     "their higher density of apartment buildings where mice are more commonly encountered indoors.")
     
 
-    st.markdown("### Rat Complaints per 1,000 by Zip Code”")
+    st.markdown("### Rat Complaints per 1,000 by Zip Code")
     chart4 = map_chart4()
     st_folium(chart4)
     st.markdown("This map demonstrates rat complaints, restaurant violations, and construction permits per 1,000 residents " \
