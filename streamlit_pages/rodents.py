@@ -57,23 +57,25 @@ def show():
     st.markdown("### Rat Complaints per 1,000 by Zip Code")
     chart4 = map_chart4()
     st_folium(chart4)
-    st.markdown("This map demonstrates rat complaints, restaurant violations, and construction permits per 1,000 residents " \
-    "across zip codes in the 5 NYC boroughs. From this map, we can see high-density rat complaint locations include upper Manhattan"
-    " and areas in Brooklyn, whereas restaurant violations and construction seem to be happening mainly in mid- and downtown Manhattan.")
+    st.markdown("This map demonstrates rat complaints, restaurant violations, and construction permits per 1,000 residents across zip codes in the 5 NYC boroughs. " \
+    "From this map, we can see high-density rat complaint locations include upper Manhattan and areas in Brooklyn and Queens,"
+    "whereas restaurant violations and construction seem to be happening mainly in mid- and downtown Manhattan.")
 
     st.markdown("### Rat Complaints vs Contributing Factors by Zip Code")
     chart5 = scatter5_chart()
     st.altair_chart(chart5)
-    st.markdown("This interactive scatterplot allows you to dive deeper into how construction sites and restaurant violations may be related to 311 rat complaints!")
+    st.markdown("This interactive scatterplot allows you to dive deeper into how construction sites and restaurant violations may be related to 311 rat complaints." \
+    "As you can see, as restaurant violations or construction permits increase, so does the number of 311 rat complaints. There aren’t many clear borough-level differences.")
 
     st.markdown("### Rat Complaint Density in Relation to MTA Stations and Lines")
     chart6 = heat6_chart()
     st_folium(chart6)
-    st.markdown("This heatmap highlights the density of rat complaints across New York City. The interactive feature allows you " \
-    "to examine rat complaint density along subway lines and MTA stations. Note clusters in Bushwick/Ridgewood, Upper West Side, Upper East Side, and Central Harlem")
+    st.markdown("This heatmap highlights the density of rat complaints across New York City. The interactive feature allows you to examine rat complaint density along subway lines and MTA stations.  " \
+    "Note clusters in these especially busy areas: Bushwick/Ridgewood, Upper West Side, Upper East Side, and Central Harlem. ")
 
     st.markdown("### Rat Complaints vs Demographic Factors by Zip Code")
     chart7 = scatter7_chart()
     st.altair_chart(chart7)
-    st.markdown("What other factors might influence 311 rat complaints, and who is more likely to make 311 rat complaints? Use this interactive scatterplot to " \
-    "investigate demographic differences in 311 rat complaints by borough.")
+    st.markdown("What other factors might influence 311 rat complaints, and who is more likely to make 311 rat complaints? " \
+    "Use this interactive scatterplot to investigate demographic differences in 311 rat complaints by borough. " \
+    "There seems to be no clear relationships between rat complaints, poverty, and race. ")
