@@ -3,7 +3,7 @@ import streamlit as st
 def show():
     st.markdown("# Project Motivation")
     st.markdown("""
-    Enthusiastic New Yorkers embrace what is colloquially referred to as the "concrete" jungle. 
+    Enthusiastic New Yorkers embrace what is colloquially referred to as the "concrete jungle". 
     Constantly facing buildings, street noise, and apartment buildings, their natural or humanistic 
     life is often sacrificed at the expense of a vibrant and cultural city. 
 
