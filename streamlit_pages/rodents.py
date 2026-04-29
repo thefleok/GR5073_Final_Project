@@ -25,7 +25,7 @@ from rat_charts.scatter7 import scatter7_chart
 
 def show():
     st.markdown("# Rodents in NYC")
-    st.markdown("### Line plot: 311 complaints by borough over time")
+    st.markdown("### Monthly 311 Rodent Complaints in NYC (2020–2025)")
     chart1 = behavior_chart()
     st.altair_chart(chart1)
     st.markdown("NYC rodent complaints follow a seasonal cycle, peaking each summer and dipping in winter." \
@@ -34,7 +34,7 @@ def show():
     " peaks have gradually declined. The 2025 peak came in noticeably lower than those of 2022 and 2023, suggesting t" \
     "he city’s multi-pronged intervention may be having an effect.")
 
-    st.markdown("### Bar Chart: 311 complaints by borough")
+    st.markdown("### Total 311 Rodent Complaints by Borough (2020-2025)")
     chart2 = bar2_chart()
     st.altair_chart(chart2)
     st.markdown("Brooklyn dominates with over 80,000 rodent complaints since 2020, accounting for nearly 40 percent of" \
@@ -44,7 +44,7 @@ def show():
     "just 3 percent of complaints.")
 
 
-    st.markdown("### Faceted Bar Chart: 311 Complaints by Type by Borough")
+    st.markdown("### Rodent Complaint Types by Borough (2020–2025)")
     chart3 = bar3_chart()
     st.altair_chart(chart3)
     st.markdown("Rat sightings make up the majority of complaints across all five boroughs. However, the proportional " \
@@ -54,25 +54,25 @@ def show():
     "their higher density of apartment buildings where mice are more commonly encountered indoors.")
     
 
-    st.markdown("### Chlorpleth: Rodent complaints by zipcode (per 1000 residents)")
+    st.markdown("### Rat Complaints per 1,000 by Zip Code”")
     chart4 = map_chart4()
     st_folium(chart4)
     st.markdown("This map demonstrates rat complaints, restaurant violations, and construction permits per 1,000 residents " \
     "across zip codes in the 5 NYC boroughs. From this map, we can see high-density rat complaint locations include upper Manhattan"
     " and areas in Brooklyn, whereas restaurant violations and construction seem to be happening mainly in mid- and downtown Manhattan.")
 
-    st.markdown("### Scatterplot: 311 complaints by zipcode vs. restaurant/construction factors (per 1000 residents)")
+    st.markdown("### Rat Complaints vs Contributing Factors by Zip Code")
     chart5 = scatter5_chart()
     st.altair_chart(chart5)
     st.markdown("This interactive scatterplot allows you to dive deeper into how construction sites and restaurant violations may be related to 311 rat complaints!")
 
-    st.markdown("### Heatmap:311 complaint density with MTA and NYCHA")
+    st.markdown("### Rat Complaint Density in Relation to MTA Stations and Lines")
     chart6 = heat6_chart()
     st_folium(chart6)
-    st.markdown("This heatmap highlights the density of rat complaints across New York City. The interactive feature allows you to examine rat complaint density along" \
-    " subway lines, MTA stations, and near low-income housing. Note the high density in Western Queens.")
+    st.markdown("This heatmap highlights the density of rat complaints across New York City. The interactive feature allows you " \
+    "to examine rat complaint density along subway lines and MTA stations. Note clusters in Bushwick/Ridgewood, Upper West Side, Upper East Side, and Central Harlem")
 
-    st.markdown("### Scatterplot: 311 complaints by zipcode vs. demographic factors (per 1000 residents)")
+    st.markdown("### Rat Complaints vs Demographic Factors by Zip Code")
     chart7 = scatter7_chart()
     st.altair_chart(chart7)
     st.markdown("What other factors might influence 311 rat complaints, and who is more likely to make 311 rat complaints? Use this interactive scatterplot to " \
