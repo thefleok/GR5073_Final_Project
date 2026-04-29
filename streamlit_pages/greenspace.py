@@ -7,14 +7,14 @@ from charts.parks_accessibility import parks_accessibility_chart
 
 def show():
     st.markdown("# NYC Parks and Greenspaces")
-    st.markdown("The parks and greenspaces (and rare trees!) around NYC are discussed " \
+    st.markdown("The parks and greenspaces (and rare trees!) around NYC are showcased " \
     "in this mapping. We include interactive map visualizations that capture the evolution " \
     "of parks over time and their benefits for the citizens of NYC (proximity to affordable " \
     "housing, tree density, etc.).")
 
 
     # introduction to first graph
-    st.markdown("### High Level Map: Overview of Parks and Greenspaces")
+    st.markdown("### Overview of Parks and Greenspaces")
 
     chart3 = parks_housing_chart()
     st_folium(chart3, width = 700, height = 500)
@@ -29,7 +29,7 @@ def show():
 
 
     # introduction to second graph
-    st.markdown("### Interactive Map: When NYC Parks were Established")
+    st.markdown("### When NYC Parks were Established")
     
     chart2 = parks_time_chart()
     st_folium(chart2, width = 700, height = 500)
@@ -40,15 +40,15 @@ def show():
     " Park began in around 1858 to offset poor industrial living standards. The City Beautiful" \
     " movement followed, which attempted to further enhance the natural design of New York " \
     "City. Robert Moses’ later influence cannot be understated: swimming pools, parkways, "
-    "and new parks and infrastructure popped up all over the city. Then the 1975 fiscal crisis" \
-    " created conditions where greenspaces were not prioritized. More recently, the focus has " \
-    "been on the climate, as well as green living areas pricing out previous residents (the" \
-    "green gentrification).")
+    "and new parks and infrastructure popped up all over the city. Then the 1975 fiscal crisis " \
+    "created conditions where greenspaces were not prioritized, and as such growth slowed. " \
+    "More recently, the focus has been on the climate, as well as the “green gentrification”:" \
+    "green, nature-heavy living areas are now pricing out previous residents. ")
 
     
 
     # show third map
-    st.markdown("### Graph 3: Affordable housing, distance from green spaces")
+    st.markdown("### Affordable housing, distance from green spaces")
     chart1 = park_types_chart()
     st_folium(chart1, width = 700, height = 500)
     st.markdown("This map shows the typical “park” parks (including flagship parks, like Central " \
@@ -60,7 +60,7 @@ def show():
     
 
 
-    st.markdown("### Park Accessibility Map")
+    st.markdown("### Park Accessibility and Population Density")
     chart4 = parks_accessibility_chart()
     st_folium(chart4, width = 700, height = 500)
     st.markdown("This map utilizes a 2x2 bivariate matrix to analyze the intersection of population density and green " \
