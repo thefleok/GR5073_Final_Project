@@ -9,8 +9,8 @@ def show():
                 "\n\n"
                 "The project is organized into three main sections: **Greenspace**, **Rodents**, and **Squirrels**. " \
                 "Each section includes a series of graphs and corresponding descriptions designed to inform viewers about" \
-                " the data being presented and design choices shown. The **Project Motivation** section details our motivation"
-                " for this project and some background on the course."
+                " the data being presented and design choices shown. The **About the Project** section details our motivation,"
+                " Methodology, and Data Sources."
                 "\n\n"
                 "Project members: \n" \
                 "* Leo Jergovic — (650) 450-3396 — lj2496@columbia.edu \n"  
