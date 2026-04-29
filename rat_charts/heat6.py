@@ -26,9 +26,9 @@ def heat6_chart():
         .str.contains("Rat|Mouse", case=False, na=False)
     ].dropna(subset=["Latitude", "Longitude"]).copy()
 
-    heat_data = rats.sample(n=5000, random_state=42)[["Latitude", "Longitude"]].values.tolist()
-    heat_data = rats[["Latitude", "Longitude"]].values.tolist()  # original
+    n_points = min(5000, len(rats))
 
+    heat_data = rats.sample(n=n_points, random_state=42)[["Latitude", "Longitude"]].values.tolist()
 
     # Map
     m = folium.Map(
