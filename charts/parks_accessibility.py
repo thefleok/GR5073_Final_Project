@@ -18,8 +18,8 @@ from prettytable import PrettyTable
 import shapely
 from shapely import LineString, Point, Polygon
 from pygris.data import get_census
-from charts.data_loader import load_parks, load_boroughs, load_popraw, load_monuments, load_trees
-
+from charts.data_loader import load_parks, load_boroughs, load_popraw, load_monuments, fix_park_accessibility
+import streamlit as st
 
 def parks_accessibility_chart():
     boroughs = load_boroughs()
@@ -41,7 +41,7 @@ def parks_accessibility_chart():
         '12': '#84A98C',  # Low Pop / High Green (Green Suburb/Residential)
         '22': '#2C6E49'   # High Pop / High Green (Integrated Excellence)
     }
-
+    """
     # ==========================================
     # 2. Data Cleaning & Land Clipping
     # ==========================================
@@ -81,6 +81,8 @@ def parks_accessibility_chart():
 
     # Now to_crs() will work perfectly
     final_gdf_viz = final_gdf.to_crs(epsg=4326)
+    """
+    final_gdf_viz = fix_park_accessibility()
 
     # ==========================================
     # 3. Folium Rendering

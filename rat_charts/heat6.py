@@ -46,8 +46,6 @@ def heat6_chart():
         show=True
     )
 
-    heat_data = rats[["Latitude", "Longitude"]].values.tolist()
-
     gradient = {
         0.0: "#00000000",
 

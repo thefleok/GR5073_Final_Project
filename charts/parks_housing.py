@@ -17,6 +17,7 @@ import shapely
 from shapely import LineString, Point, Polygon
 import numpy as np
 from charts.data_loader import load_parks, load_monuments, load_trees
+import streamlit as st
 
 def parks_housing_chart():
     parks = load_parks()

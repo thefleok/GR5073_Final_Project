@@ -16,7 +16,8 @@ from prettytable import PrettyTable
 import shapely
 from shapely import LineString, Point, Polygon
 import numpy as np
-from charts.data_loader import load_parks, load_housing
+from charts.data_loader import load_parks, load_housing, fix_park_types
+import streamlit as st
 
 def park_types_chart():
     parks = load_parks()
@@ -35,7 +36,7 @@ def park_types_chart():
 
     #TYPES OF PARKS
     """
-
+    """
     ## CLEANING PARKS DATA
 
     # filtered for typical "park" parks
@@ -112,7 +113,11 @@ def park_types_chart():
     housing2 = housing2.set_geometry('geometry_2')
 
     closest = gpd.sjoin_nearest(housing2, parks_geo, how = 'inner', distance_col='distance')
-
+    """
+    thelist = fix_park_types()
+    closest = thelist[1]
+    housing_filter = thelist[0]
+    
     closest['park_centroids'] = [row.centroid for row in closest['geometry']]
     closest['park_lat'] = [row.y for row in closest['park_centroids']]
     closest['park_long'] = [row.x for row in closest['park_centroids']]
